@@ -1,0 +1,1321 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{AE7349BB-B39F-42E9-9F23-CE142A790469}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>POS___IMS</RootNamespace>
+    <AssemblyName>POS &amp; IMS</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>POSICON.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Dapper, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>packages\Dapper.2.1.28\lib\net461\Dapper.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net, Version=2.0.15.0, Culture=neutral, PublicKeyToken=669e0ddf0bb1aa2a, processorArchitecture=MSIL">
+      <HintPath>packages\log4net.2.0.15\lib\net45\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.Office.Interop.Excel.15.0.4795.1001\lib\net20\Microsoft.Office.Interop.Excel.dll</HintPath>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.ExpressionTask, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Buffers.4.5.1\lib\net461\System.Buffers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Memory, Version=4.0.1.2, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Memory.4.5.5\lib\net461\System.Memory.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Numerics.Vectors, Version=4.1.4.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Numerics.Vectors.4.5.0\lib\net46\System.Numerics.Vectors.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.CompilerServices.Unsafe, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>packages\System.Runtime.CompilerServices.Unsafe.6.0.0\lib\net461\System.Runtime.CompilerServices.Unsafe.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceProcess" />
+    <Reference Include="System.Text.Encodings.Web, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Encodings.Web.8.0.0\lib\net462\System.Text.Encodings.Web.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Text.Json, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Text.Json.8.0.0\lib\net462\System.Text.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Threading.Tasks.Extensions, Version=4.2.0.1, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.Threading.Tasks.Extensions.4.5.4\lib\net461\System.Threading.Tasks.Extensions.dll</HintPath>
+    </Reference>
+    <Reference Include="System.ValueTuple, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
+      <HintPath>packages\System.ValueTuple.4.5.0\lib\net47\System.ValueTuple.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="DAL\AvailableAlchoholStock.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\AvailableItemQuantity.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Bill_Details.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Bill_Header.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Category.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CigaretteDetail.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Company.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CustomCake_Details.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\CustomCake_Header.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Customer_Details.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Discount_Details.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Discount_Header.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Discount_Type.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Employee_Details.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\EvolvePosModel.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EvolvePosModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\EvolvePosModel.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\EvolvePosModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EvolvePosModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\EvolvePosModel1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>EvolvePosModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Form_Details.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GlassCapacity.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GRN_Details.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GRN_Header.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GRN_ReturnDetails.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GRN_Return_Types.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\InvoiceDetail.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\InvoiceHeader.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Item.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Item_Pricing.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\KOT_Details.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\KOT_Header.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\LiquorDetail.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\LiquorType.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Liquor_GRN_Details.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Liquor_GRN_Headers.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\LoggedUserName.cs" />
+    <Compile Include="DAL\Order_Status.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PaymentDetail.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\PaymentHeader.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Payment_Details.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Payment_Methods.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Printer_Details.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Report.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SectionWiseItem.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\GenerateSequence.cs" />
+    <Compile Include="DAL\Sequence.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Session.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\SubCategory.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Table_Details.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TempBill_Details.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\TempBill_Header.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Terminal.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Unit.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\UserLoginCache.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\User_Details.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\User_Role.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Validate.DataValidate.cs" />
+    <Compile Include="Enums\Encryption.cs" />
+    <Compile Include="Enums\OrderStatusEnum.cs" />
+    <Compile Include="KOT.cs">
+      <DependentUpon>KOT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="KOT.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KOT.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Models\ItemDetailModel.cs" />
+    <Compile Include="Models\LiquorModel.cs" />
+    <Compile Include="Models\RoleDetails.cs" />
+    <Compile Include="Models\RoleGrid.cs" />
+    <Compile Include="Models\UserModel.cs" />
+    <Compile Include="PAL\Inventory Mgt\Main Menu\Dashboard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\Form2.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\Form2.Designer.cs">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmCashReconciliation.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmCashReconciliation.Designer.cs">
+      <DependentUpon>frmCashReconciliation.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\Form1.Designer.cs">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmCategoryMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmCategoryMenu.Designer.cs">
+      <DependentUpon>frmCategoryMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmCustomerMgt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmCustomerMgt.Designer.cs">
+      <DependentUpon>frmCustomerMgt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmgrnmenucs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmgrnmenucs.Designer.cs">
+      <DependentUpon>frmgrnmenucs.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\GRN\frmGRNLiquor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\GRN\frmGRNLiquor.Designer.cs">
+      <DependentUpon>frmGRNLiquor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\GRN\frmGRNReturn.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\GRN\frmGRNReturn.Designer.cs">
+      <DependentUpon>frmGRNReturn.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmItem.Designer.cs">
+      <DependentUpon>frmItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmKitchen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmKitchen.Designer.cs">
+      <DependentUpon>frmKitchen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmMainPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmMainPanel.Designer.cs">
+      <DependentUpon>frmMainPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Items\frmCigarette.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Items\frmCigarette.Designer.cs">
+      <DependentUpon>frmCigarette.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Items\frmLiquor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Items\frmLiquor.Designer.cs">
+      <DependentUpon>frmLiquor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Reports\frmDailySales.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Reports\frmDailySales.Designer.cs">
+      <DependentUpon>frmDailySales.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Reports\frmTopSelling.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Reports\frmTopSelling.Designer.cs">
+      <DependentUpon>frmTopSelling.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Settings\frmOrderMgt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Settings\frmOrderMgt.Designer.cs">
+      <DependentUpon>frmOrderMgt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmPaymetmethods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmPaymetmethods.Designer.cs">
+      <DependentUpon>frmPaymetmethods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmPromotion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmPromotion.Designer.cs">
+      <DependentUpon>frmPromotion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmReports.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmReports.Designer.cs">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmSettings.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmSettings.Designer.cs">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmSupplier.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmSupplier.Designer.cs">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmTableMgt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmTableMgt.Designer.cs">
+      <DependentUpon>frmTableMgt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmMainMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmMainMenu.Designer.cs">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmWorkPeriod.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmWorkPeriod.Designer.cs">
+      <DependentUpon>frmWorkPeriod.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Arrangement\frmSectionArrangement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Arrangement\frmSectionArrangement.Designer.cs">
+      <DependentUpon>frmSectionArrangement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Arrangement\frmTableArrangement.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Arrangement\frmTableArrangement.Designer.cs">
+      <DependentUpon>frmTableArrangement.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Items\frmItemAdd.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Items\frmItemAdd.Designer.cs">
+      <DependentUpon>frmItemAdd.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Items\frmItemPricing.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Items\frmItemPricing.Designer.cs">
+      <DependentUpon>frmItemPricing.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmCrystalReportViewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmCrystalReportViewer.Designer.cs">
+      <DependentUpon>frmCrystalReportViewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\User\frmRole.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\User\frmRole.Designer.cs">
+      <DependentUpon>frmRole.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\User\frmUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\User\frmUser.Designer.cs">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Category\frmCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Category\frmCategory.Designer.cs">
+      <DependentUpon>frmCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Settings\frmCompany.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Settings\frmCompany.Designer.cs">
+      <DependentUpon>frmCompany.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Settings\frmDB_Backup.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Settings\frmDB_Backup.Designer.cs">
+      <DependentUpon>frmDB_Backup.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Settings\frmEmployee.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Settings\frmEmployee.Designer.cs">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\User\frmFogotPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\User\frmFogotPassword.Designer.cs">
+      <DependentUpon>frmFogotPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\GRN\frmGRN.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\GRN\frmGRN.Designer.cs">
+      <DependentUpon>frmGRN.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Settings\frmPaymentMethods.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Settings\frmPaymentMethods.Designer.cs">
+      <DependentUpon>frmPaymentMethods.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Settings\frmPrinter.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Settings\frmPrinter.Designer.cs">
+      <DependentUpon>frmPrinter.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Category\frmSubCategory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Category\frmSubCategory.Designer.cs">
+      <DependentUpon>frmSubCategory.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Settings\frmUnits.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\Settings\frmUnits.Designer.cs">
+      <DependentUpon>frmUnits.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\User\frmUserAuthority.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\SubMenu\User\frmUserAuthority.Designer.cs">
+      <DependentUpon>frmUserAuthority.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmUserMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\frmUserMenu.Designer.cs">
+      <DependentUpon>frmUserMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\MainPanelAdmin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Inventory Mgt\Main Menu\MainPanelAdmin.Designer.cs">
+      <DependentUpon>MainPanelAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Location.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Login_Details.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Order_Type.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Outlet.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\POS\frmCustomCakeOrder.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\POS\frmCustomCakeOrder.Designer.cs">
+      <DependentUpon>frmCustomCakeOrder.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\POS\frmKeyBoard.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\POS\frmKeyBoard.Designer.cs">
+      <DependentUpon>frmKeyBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\POS\frmOrderedCustomer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\POS\frmOrderedCustomer.Designer.cs">
+      <DependentUpon>frmOrderedCustomer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\POS\frmPOS.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\POS\frmPOS.Designer.cs">
+      <DependentUpon>frmPOS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\POS\frmPOSNew.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\POS\frmPOSNew.Designer.cs">
+      <DependentUpon>frmPOSNew.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\POS\frmDiscount.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\POS\frmDiscount.Designer.cs">
+      <DependentUpon>frmDiscount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Common Forms\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Common Forms\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\POS\frmPayment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\POS\frmPayment.Designer.cs">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\Common Forms\frmPower.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\Common Forms\frmPower.Designer.cs">
+      <DependentUpon>frmPower.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\POS\frmAddItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\POS\frmAddItem.Designer.cs">
+      <DependentUpon>frmAddItem.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\POS\frmOrderTypeSelection.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\POS\frmOrderTypeSelection.Designer.cs">
+      <DependentUpon>frmOrderTypeSelection.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\POS\frmDineInOptions.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\POS\frmDineInOptions.Designer.cs">
+      <DependentUpon>frmDineInOptions.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\POS\frmSplitPyment.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PAL\POS\frmSplitPyment.Designer.cs">
+      <DependentUpon>frmSplitPyment.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\UserSession.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DAL\Reset_Password.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Section.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Stock_Category.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\Supplier_Details.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\UCD\POSTopBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PAL\UCD\POSTopBar.Designer.cs">
+      <DependentUpon>POSTopBar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PAL\UCD\UCTopAdmin.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PAL\UCD\UCTopAdmin.Designer.cs">
+      <DependentUpon>UCTopAdmin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DAL\User_Authority.cs">
+      <DependentUpon>EvolvePosModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Reports\Invoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Invoice.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\KOTBill.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>KOTBill.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\RPTAllCustomers.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPTAllCustomers.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RPTCatogeryviseSubcatogery.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPTCatogeryviseSubcatogery.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RPTAllSalesRecipt.cs">
+      <DependentUpon>RPTAllSalesRecipt.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RPTGRNReport.cs">
+      <DependentUpon>RPTGRNReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RPTItemWiseSalesSummary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPTItemWiseSalesSummary.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\TotalStockReport.cs">
+      <DependentUpon>TotalStockReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RPTTotalSalesReport.cs">
+      <DependentUpon>RPTTotalSalesReport.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RPTDailySalesSummary.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPTDailySalesSummary.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RPTItemdetailsCakesAndCoffeeHomagama.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPTItemdetailsCakesAndCoffeeHomagama.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RPTTemplate- Copy.cs">
+      <DependentUpon>RPTTemplate- Copy.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RPTDailySalesItemWise.cs">
+      <DependentUpon>RPTDailySalesItemWise.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RPTDailySales1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPTDailySales.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RPTGrnDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPTGrnDetails.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\RPTItemDetails.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>RPTItemDetails.rpt</DependentUpon>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reports\Templates\Temcakes&amp;coffee&amp;karokelouncheinvoice Copy.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Temcakes&amp;coffee&amp;karokelouncheinvoice Copy.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\Templates\Teminvoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Teminvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\Templates\Teminvoice1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Teminvoice1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\Templates\TeminvoiceCakes&amp;Cofee - Copy.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TeminvoiceCakes&amp;Cofee - Copy.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\Templates\Temkotrecipt.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Temkotrecipt.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Reports\Templates\Temmegakitcheninvoice.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Temmegakitcheninvoice.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\Form2.resx">
+      <DependentUpon>Form2.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\frmCashReconciliation.resx">
+      <DependentUpon>frmCashReconciliation.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\frmCategoryMenu.resx">
+      <DependentUpon>frmCategoryMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\frmCustomerMgt.resx">
+      <DependentUpon>frmCustomerMgt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\frmgrnmenucs.resx">
+      <DependentUpon>frmgrnmenucs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\GRN\frmGRNLiquor.resx">
+      <DependentUpon>frmGRNLiquor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\GRN\frmGRNReturn.resx">
+      <DependentUpon>frmGRNReturn.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\frmItem.resx">
+      <DependentUpon>frmItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\frmKitchen.resx">
+      <DependentUpon>frmKitchen.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\frmMainPanel.resx">
+      <DependentUpon>frmMainPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\Items\frmCigarette.resx">
+      <DependentUpon>frmCigarette.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\Items\frmLiquor.resx">
+      <DependentUpon>frmLiquor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\Reports\frmDailySales.resx">
+      <DependentUpon>frmDailySales.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\Reports\frmTopSelling.resx">
+      <DependentUpon>frmTopSelling.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\Settings\frmOrderMgt.resx">
+      <DependentUpon>frmOrderMgt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\frmPaymetmethods.resx">
+      <DependentUpon>frmPaymetmethods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\frmPromotion.resx">
+      <DependentUpon>frmPromotion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\frmReports.resx">
+      <DependentUpon>frmReports.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\frmSettings.resx">
+      <DependentUpon>frmSettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\frmSupplier.resx">
+      <DependentUpon>frmSupplier.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\frmTableMgt.resx">
+      <DependentUpon>frmTableMgt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\frmMainMenu.resx">
+      <DependentUpon>frmMainMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\frmWorkPeriod.resx">
+      <DependentUpon>frmWorkPeriod.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\Arrangement\frmSectionArrangement.resx">
+      <DependentUpon>frmSectionArrangement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\Arrangement\frmTableArrangement.resx">
+      <DependentUpon>frmTableArrangement.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\Items\frmItemAdd.resx">
+      <DependentUpon>frmItemAdd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\Items\frmItemPricing.resx">
+      <DependentUpon>frmItemPricing.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\frmCrystalReportViewer.resx">
+      <DependentUpon>frmCrystalReportViewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\Settings\frmCompany.resx">
+      <DependentUpon>frmCompany.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\Settings\frmDB_Backup.resx">
+      <DependentUpon>frmDB_Backup.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\Settings\frmPaymentMethods.resx">
+      <DependentUpon>frmPaymentMethods.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\Settings\frmPrinter.resx">
+      <DependentUpon>frmPrinter.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\User\frmRole.resx">
+      <DependentUpon>frmRole.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\User\frmUser.resx">
+      <DependentUpon>frmUser.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\Category\frmCategory.resx">
+      <DependentUpon>frmCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\Settings\frmEmployee.resx">
+      <DependentUpon>frmEmployee.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\GRN\frmGRN.resx">
+      <DependentUpon>frmGRN.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\Category\frmSubCategory.resx">
+      <DependentUpon>frmSubCategory.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\Settings\frmUnits.resx">
+      <DependentUpon>frmUnits.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\frmUserMenu.resx">
+      <DependentUpon>frmUserMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\Main Menu\MainPanelAdmin.resx">
+      <DependentUpon>MainPanelAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\User\frmFogotPassword.resx">
+      <DependentUpon>frmFogotPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Inventory Mgt\SubMenu\User\frmUserAuthority.resx">
+      <DependentUpon>frmUserAuthority.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\POS\frmCustomCakeOrder.resx">
+      <DependentUpon>frmCustomCakeOrder.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\POS\frmKeyBoard.resx">
+      <DependentUpon>frmKeyBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\POS\frmOrderedCustomer.resx">
+      <DependentUpon>frmOrderedCustomer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\POS\frmPOS.resx">
+      <DependentUpon>frmPOS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\POS\frmDiscount.resx">
+      <DependentUpon>frmDiscount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Common Forms\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\POS\frmPayment.resx">
+      <DependentUpon>frmPayment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\Common Forms\frmPower.resx">
+      <DependentUpon>frmPower.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\POS\frmAddItem.resx">
+      <DependentUpon>frmAddItem.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\POS\frmOrderTypeSelection.resx">
+      <DependentUpon>frmOrderTypeSelection.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\POS\frmDineInOptions.resx">
+      <DependentUpon>frmDineInOptions.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\POS\frmSplitPyment.resx">
+      <DependentUpon>frmSplitPyment.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\UCD\POSTopBar.resx">
+      <DependentUpon>POSTopBar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PAL\UCD\UCTopAdmin.resx">
+      <DependentUpon>UCTopAdmin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Invoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Invoice.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\KOTBill.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>KOTBill.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RPTAllCustomers.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTAllCustomers.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RPTCatogeryviseSubcatogery.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTCatogeryviseSubcatogery.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RPTAllSalesRecipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTAllSalesRecipt.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RPTGRNReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTGRNReport.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RPTItemWiseSalesSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTItemWiseSalesSummary.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\TotalStockReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TotalStockReport.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RPTTotalSalesReport.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTTotalSalesReport.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RPTDailySalesSummary.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTDailySalesSummary.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RPTItemdetailsCakesAndCoffeeHomagama.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTItemdetailsCakesAndCoffeeHomagama.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RPTTemplate- Copy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTTemplate- Copy.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RPTDailySalesItemWise.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTDailySalesItemWise.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RPTDailySales.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTDailySales1.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RPTGrnDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTGrnDetails.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\RPTItemDetails.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>RPTItemDetails.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Templates\Temcakes&amp;coffee&amp;karokelouncheinvoice Copy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Temcakes&amp;coffee&amp;karokelouncheinvoice Copy.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Templates\Teminvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Teminvoice.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Templates\Teminvoice1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Teminvoice1.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Templates\TeminvoiceCakes&amp;Cofee - Copy.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>TeminvoiceCakes&amp;Cofee - Copy.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Templates\Temkotrecipt.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Temkotrecipt.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reports\Templates\Temmegakitcheninvoice.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Temmegakitcheninvoice.cs</LastGenOutput>
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EntityDeploy Include="DAL\EvolvePosModel.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>EvolvePosModel1.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="DAL\EvolvePosModel.edmx.diagram">
+      <DependentUpon>EvolvePosModel.edmx</DependentUpon>
+    </None>
+    <None Include="KOT.xsc">
+      <DependentUpon>KOT.xsd</DependentUpon>
+    </None>
+    <None Include="KOT.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>KOT.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="KOT.xss">
+      <DependentUpon>KOT.xsd</DependentUpon>
+    </None>
+    <None Include="log4net.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="packages.config" />
+    <None Include="packages\EntityFramework.6.4.4\.signature.p7s" />
+    <None Include="packages\EntityFramework.6.4.4\buildTransitive\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.4.4\buildTransitive\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.4.4\buildTransitive\netcoreapp3.0\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.4.4\buildTransitive\netcoreapp3.0\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.4.4\build\EntityFramework.DefaultItems.props" />
+    <None Include="packages\EntityFramework.6.4.4\build\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.4.4\build\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.4.4\build\netcoreapp3.0\EntityFramework.props" />
+    <None Include="packages\EntityFramework.6.4.4\build\netcoreapp3.0\EntityFramework.targets" />
+    <None Include="packages\EntityFramework.6.4.4\content\net40\App.config.install.xdt" />
+    <None Include="packages\EntityFramework.6.4.4\content\net40\App.config.transform" />
+    <None Include="packages\EntityFramework.6.4.4\content\net40\Web.config.install.xdt" />
+    <None Include="packages\EntityFramework.6.4.4\content\net40\Web.config.transform" />
+    <None Include="packages\EntityFramework.6.4.4\EntityFramework.6.4.4.nupkg" />
+    <None Include="packages\EntityFramework.6.4.4\tools\EntityFramework6.PS2.psd1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\EntityFramework6.PS2.psm1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\EntityFramework6.psd1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\EntityFramework6.psm1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\init.ps1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\install.ps1" />
+    <None Include="packages\EntityFramework.6.4.4\tools\netcoreapp3.0\any\ef6.runtimeconfig.json" />
+    <None Include="packages\log4net.2.0.15\.signature.p7s" />
+    <None Include="packages\log4net.2.0.15\log4net.2.0.15.nupkg" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAL\EvolvePosModel.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EvolvePosModel.edmx</DependentUpon>
+      <LastGenOutput>EvolvePosModel.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DAL\EvolvePosModel.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>EvolvePosModel.edmx</DependentUpon>
+      <LastGenOutput>EvolvePosModel.cs</LastGenOutput>
+    </Content>
+    <Content Include="Images\cake.png" />
+    <Content Include="packages\EntityFramework.6.4.4\build\Microsoft.Data.Entity.Build.Tasks.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\Icon.png" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net40\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net40\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net40\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net40\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\net45\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\netstandard2.1\EntityFramework.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\netstandard2.1\EntityFramework.SqlServer.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\netstandard2.1\EntityFramework.SqlServer.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\lib\netstandard2.1\EntityFramework.xml" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\about_EntityFramework6.help.txt" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net40\any\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net40\any\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net40\win-x86\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net40\win-x86\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net45\any\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net45\any\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net45\win-x86\ef6.exe" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\net45\win-x86\ef6.pdb" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\netcoreapp3.0\any\ef6.dll" />
+    <Content Include="packages\EntityFramework.6.4.4\tools\netcoreapp3.0\any\ef6.pdb" />
+    <Content Include="packages\log4net.2.0.15\lib\net20\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\net20\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\lib\net35\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\net35\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\lib\net40-client\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\net40-client\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\lib\net40\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\net40\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\lib\net45\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\net45\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\lib\netstandard1.3\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\netstandard1.3\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\lib\netstandard2.0\log4net.dll" />
+    <Content Include="packages\log4net.2.0.15\lib\netstandard2.0\log4net.xml" />
+    <Content Include="packages\log4net.2.0.15\package-icon.png" />
+    <Content Include="POSICON.ico" />
+    <Content Include="Resources\BEVERAGES.png" />
+    <Content Include="Resources\CAKES.png" />
+    <Content Include="Resources\Delivery.png" />
+    <Content Include="Resources\DESSERTS.png" />
+    <Content Include="Resources\Dine In.png" />
+    <Content Include="Resources\DISHES.png" />
+    <Content Include="Resources\Drive Thru.png" />
+    <Content Include="Resources\MAINS.png" />
+    <Content Include="Resources\Pickme.png" />
+    <None Include="Resources\png-transparent-visa-flat-brand-logo-icon-thumbnail.png" />
+    <Content Include="Resources\SAVORY ITEM.png" />
+    <Content Include="Resources\STARTERS.png" />
+    <Content Include="Resources\Take Away.png" />
+    <Content Include="Resources\TB01.png" />
+    <Content Include="Resources\Uber.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Reports\ReportsDatasets\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.7.2">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4.7.2 %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', 'packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>
